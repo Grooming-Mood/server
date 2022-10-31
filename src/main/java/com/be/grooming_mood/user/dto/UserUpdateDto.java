@@ -9,7 +9,5 @@ import lombok.NoArgsConstructor;
 public class UserUpdateDto {
 
     private String name;
-
     private String profileImg;
-
 }

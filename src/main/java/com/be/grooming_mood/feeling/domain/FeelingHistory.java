@@ -31,11 +31,10 @@ public class FeelingHistory extends BaseTimeEntity {
 
     @Builder
     public FeelingHistory(User user,
-                          FeelingType feeling,
-                          LocalDateTime createdDate){
+                          FeelingType feeling){
         this.user = user;
         this.feeling = feeling;
-        this.createdDate = createdDate;
+        this.createdDate = LocalDateTime.now();
 
     }
 }

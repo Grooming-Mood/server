@@ -1,6 +1,7 @@
 package com.be.grooming_mood.user.domain;
 
 import com.be.grooming_mood.common.domain.BaseTimeEntity;
+import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,12 +40,14 @@ public class User extends BaseTimeEntity {
                 String password,
                 String name,
                 String profileImg,
-                Role role) {
+                Role role,
+                LocalDateTime createdDate){
         this.email = email;
         this.password = password;
         this.name = name;
         this.profileImg = profileImg;
         this.role = role;
+        this.createdDate = createdDate;
     }
 
     public User update(String name, String profileImg) {

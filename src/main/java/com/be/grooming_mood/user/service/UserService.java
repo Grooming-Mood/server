@@ -1,5 +1,9 @@
 package com.be.grooming_mood.user.service;
 
+import static com.be.grooming_mood.exception.ErrorCode.INVALID_EMAIL;
+import static com.be.grooming_mood.exception.ErrorCode.INVALID_PASSWORD;
+import static com.be.grooming_mood.exception.ErrorCode.USER_NOT_FOUND;
+
 import com.be.grooming_mood.exception.BadRequestException;
 import com.be.grooming_mood.exception.NotFoundException;
 import com.be.grooming_mood.user.domain.Role;
@@ -10,16 +14,13 @@ import com.be.grooming_mood.user.dto.UserCreateDto;
 import com.be.grooming_mood.user.dto.UserLoginDto;
 import com.be.grooming_mood.user.dto.UserUpdateDto;
 import com.be.grooming_mood.utils.jwt.JwtService;
+import java.time.LocalDateTime;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-
-import java.util.Optional;
-
-import static com.be.grooming_mood.exception.ErrorCode.*;
 
 @RequiredArgsConstructor
 @Service
@@ -45,6 +46,7 @@ public class UserService {
                         .password(passwordEncoder.encode(userCreateDto.getPassword()))
                         .name(userCreateDto.getName())
                         .role(Role.USER)
+                        .createdDate(LocalDateTime.now())
                         .build();
         userRepository.save(user);
         return user.getId();

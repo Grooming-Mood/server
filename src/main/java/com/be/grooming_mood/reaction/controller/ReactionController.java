@@ -1,7 +1,7 @@
 package com.be.grooming_mood.reaction.controller;
 
 
-import com.be.grooming_mood.oauth.LoginUser;
+
 import com.be.grooming_mood.reaction.dto.ReactionDeleteDto;
 import com.be.grooming_mood.reaction.dto.ReactionDto;
 import com.be.grooming_mood.reaction.service.ReactionService;

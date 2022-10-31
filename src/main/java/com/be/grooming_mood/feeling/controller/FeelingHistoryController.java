@@ -1,9 +1,9 @@
 package com.be.grooming_mood.feeling.controller;
 
 import com.be.grooming_mood.feeling.domain.FeelingHistory;
-import com.be.grooming_mood.feeling.dto.FeelingHistoryDto;
+import com.be.grooming_mood.feeling.dto.FeelingHistoryInfo;
+import com.be.grooming_mood.feeling.dto.FeelingHistoryInfoList;
 import com.be.grooming_mood.feeling.service.FeelingHistoryService;
-import com.be.grooming_mood.oauth.LoginUser;
 import com.be.grooming_mood.feeling.dto.FeelingHistoryCreateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class FeelingHistoryController {
 
 
     @GetMapping("/userId/{userId}")
-    public List<FeelingHistory> getFeelingHistoryInMonth(@PathVariable("userId") Long userId) {
+    public FeelingHistoryInfoList getFeelingHistoryInMonth(@PathVariable("userId") Long userId) {
         return feelingHistoryService.getFeelingHistoryList(userId);
     }
 

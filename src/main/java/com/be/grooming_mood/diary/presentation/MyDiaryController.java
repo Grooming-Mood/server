@@ -25,7 +25,7 @@ public class MyDiaryController {
     @ApiOperation(value = "일기 등록")
     @PostMapping("/{userId}")
     public Long createDiary(@PathVariable("userId") Long userId,
-                            @Valid DiaryCreateDto diaryCreateDto){
+                            @Valid @RequestBody DiaryCreateDto diaryCreateDto){
         return diaryCommandService.create(userId, diaryCreateDto);
     }
 

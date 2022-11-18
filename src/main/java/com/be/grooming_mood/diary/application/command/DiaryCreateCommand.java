@@ -10,6 +10,6 @@ import lombok.Getter;
 @Getter
 public class DiaryCreateCommand {
     private FeelingType feeling;
-    private String content;
+    private String diaryContent;
     private Boolean isPublic;
 }

@@ -1,7 +1,7 @@
 package com.be.grooming_mood.diary.presentation.dto;
 
-import com.be.grooming_mood.common.domain.BaseTimeEntity;
 import com.be.grooming_mood.feeling.domain.FeelingType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
